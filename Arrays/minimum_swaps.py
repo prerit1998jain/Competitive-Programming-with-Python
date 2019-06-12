@@ -6,6 +6,10 @@ You are given an unordered array consisting of consecutive integers  [1, 2, 3, .
 
 '''
 
+'''
+The solution is that if we replace each element to it's correct position and some cycles will be formed and the number of swaps required per cycle is len(cycle) - 1
+'''
+
 import math
 import os
 import random
@@ -24,14 +28,15 @@ def minimumSwaps(arr):
     graph = {}
     for i in range(length):
         graph[i] = l[i]-1
-    #print(graph)
+    print("The graph formed : {} \n".format(graph))
 
+    # Checking the length of the list val, as I am removing the node which is moved to it's correct postion
     while(len(val) != 0):
         edge_cycle = []
         temp = val[0]
+	# Start of new edge_cycle
         while((temp not in edge_cycle)):
             edge_cycle.append(temp)
-            #l.remove(arr[temp])
             val.remove(temp)
             temp = graph[temp]
         edge_cycles.append(edge_cycle)
