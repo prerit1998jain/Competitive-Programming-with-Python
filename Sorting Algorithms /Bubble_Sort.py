@@ -1,4 +1,5 @@
 import math
+import time
 
 # Input the array size
 n = int(input("Enter the size of array \n"))
@@ -17,5 +18,7 @@ def Bubble_sort(q):
     return(q,swaps)
 
 p = []
+start = time.time()
 p,n = Bubble_sort(q)
-print(p,n)
+end = time.time()
+print( "Sorted Array: {} \n Number of Swaps: {} \n Execution Time: {}".format(p,n, end - start))
