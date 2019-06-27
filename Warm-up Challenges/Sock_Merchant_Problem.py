@@ -11,13 +11,23 @@ For example, there are n = 5 socks with colors [1,2,1,2,1] . There is one pair o
 '''
 
 import math
+import time
 import os
 import random
 import re
 import sys
+from collections import Counter
 
 # Complete the sockMerchant function below.
-def sockMerchant(n, ar):
+def sockMerchant_1(n, ar):
+    count = 0
+    count_dict = Counter(ar)
+    val = list(set(ar))
+    for i in val:
+        count += int(count_dict[i]/2)
+    return count
+
+def sockMerchant_2(n,ar):
     count = 0
     used = []
     for i in range(n):
@@ -28,7 +38,7 @@ def sockMerchant(n, ar):
                         count = count + 1
                         used.append(j)
                         break
-    return count
+    return(count)
 
 arr = []
 i = 0
@@ -37,6 +47,13 @@ print(" Input the colors of the n socks \n")
 for i in range(int(n)):
     value = input()
     arr.append(value)
+print(arr)
 
-count = sockMerchant(n,arr)
-print("The output is ", count)
+start1 = time.time()
+count1 = sockMerchant_1(n,arr)
+end1 = time.time()
+start2 = time.time()
+count2 = sockMerchant_2(n,arr)
+end2 = time.time()
+print("1: Output: {}, Execution Time: {}".format(count1,(end1-start1)))
+print("2: Output: {}, Execution Time: {}".format(count1,(end2-start2)))
