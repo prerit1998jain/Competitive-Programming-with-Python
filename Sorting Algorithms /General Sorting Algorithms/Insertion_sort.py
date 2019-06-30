@@ -19,11 +19,22 @@ def Insertion_Sort(temp):
                 break
     return(arr)
 
+def Insertion_Sort_1(arr):
+    for i in range(len(arr)):
+        val = arr[i]
+        key = 0
+        j = i-1
+        while j>=0 and arr[j]>val:
+            arr[j+1] = arr[j]
+            j = j-1
+        arr[j+1] = val
+    return(arr)
+
 # Taking input
 n = int(input("Enter the size of array \n"))
 arr = list(map(int, input("Enter the {} values separated by spaces \n".format(n)).rstrip().split()))
 start = time.time()
-sorted = Insertion_Sort(arr)
+sorted = Insertion_Sort_1(arr.copy())
 end = time.time()
 
 print("Input array: {}\n Sorted Array: {} \n Execution Time: {}".format(arr,sorted,end-start))
