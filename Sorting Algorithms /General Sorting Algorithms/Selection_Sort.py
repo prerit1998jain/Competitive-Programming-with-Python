@@ -4,6 +4,12 @@ import time
 SELECTION SORT
 '''
 
+'''
+Approach
+Traverse an array. And for each index, select the min element in the remaining
+array and swap it with the current index.
+'''
+
 def Selection_Sort(arr):
     for i in range(n):
         min = i
