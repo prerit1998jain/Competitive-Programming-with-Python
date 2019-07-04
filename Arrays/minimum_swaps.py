@@ -24,7 +24,7 @@ def minimumSwaps(arr):
     l = list(arr)
     val = list(range(length))
     output = 0
-    # Creating the Graph 
+    # Creating the Graph
     graph = {}
     for i in range(length):
         graph[i] = l[i]-1
@@ -40,14 +40,31 @@ def minimumSwaps(arr):
             val.remove(temp)
             temp = graph[temp]
         edge_cycles.append(edge_cycle)
-        output += len(edge_cycle) - 1 
+        output += len(edge_cycle) - 1
     return output
 
+# APPROACH 2
+# def minimumSwaps(arr):
+#     temp = [0] * (len(arr) + 1)
+#     for pos, val in enumerate(arr):
+#         temp[val] = pos
+#         #pos += 1
+#     swaps = 0
+#     for i in range(len(arr)):
+#         if arr[i] != i+1:
+#             swaps += 1
+#             t = arr[i]
+#             arr[i] = i+1
+#             arr[temp[i+1]] = t
+#             temp[t] = temp[i+1]
+#     return swaps
 
-# Calling the function 
+
+
+
+# Calling the function
 n = int(input("Enter the size of input array \n"))
 arr = list(map(int, input("Enter the array elements separated by spaces").rstrip().split()))
 res = minimumSwaps(arr)
 
 print("Result: {}".format(res))
-
