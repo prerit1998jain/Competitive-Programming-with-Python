@@ -3,7 +3,8 @@
 
 Lilah has a string, s, of lowercase English letters that she repeated infinitely many times.
 
-Given an integer, n, find and print the number of letter a's in the first  letters of Lilah's infinite string.
+Given an integer, n, find and print the number of letter a's in the first n letters
+of Lilah's infinite string.
 
 '''
 
@@ -27,11 +28,11 @@ def repeatedString(s, n):
     for i in range(l):
         if(s[i] == 'a'):
             total_a += 1
-    
+
     for j in range(remainder):
         if(s[j]=='a'):
-            remainder_a += 1 
-    
+            remainder_a += 1
+
     return(total_a*repeat + remainder_a)
 
 # Calling the function
