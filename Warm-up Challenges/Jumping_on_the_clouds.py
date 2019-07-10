@@ -1,9 +1,16 @@
 '''
 #### JUMPING ON THE CLOUDS PROBLEM
 
-Emma is playing a new mobile game that starts with consecutively numbered clouds. Some of the clouds are thunderheads and others are cumulus. She can jump on any cumulus cloud having a number that is equal to the number of the current cloud plus 1  or 2. She must avoid the thunderheads. Determine the minimum number of jumps it will take Emma to jump from her starting postion to the last cloud. It is always possible to win the game.
+Emma is playing a new mobile game that starts with consecutively numbered clouds.
+Some of the clouds are thunderheads and others are cumulus. She can jump on any
+cumulus cloud having a number that is equal to the number of the current cloud
+plus 1  or 2. She must avoid the thunderheads. Determine the minimum number of
+jumps it will take Emma to jump from her starting postion to the last cloud.
+It is always possible to win the game.
 
-For each game, Emma will get an array of clouds numbered 0 if they are safe or 1 if they must be avoided. The number on each cloud is its index in the list. Give the least number of steps to be taken for winning.
+For each game, Emma will get an array of clouds numbered 0 if they are safe or 1
+if they must be avoided. The number on each cloud is its index in the list.
+Give the least number of steps to be taken for winning.
 
 
 '''
@@ -39,7 +46,7 @@ def jumpingOnClouds(c):
             if i+1 <= len(c)-1:
                 step.append(i+1)
                 step_count += 1
-                i = i+1 
+                i = i+1
 
     return step_count, step
 
