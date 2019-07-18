@@ -18,5 +18,31 @@ and remove elements from the list.
 '''
 
 '''
-CREATION OF THE LINKED LIST.
+CREATION OF THE LINKED LIST and Adding a method to traverse it.
 '''
+class Node:
+    def __init__(self, dataval = None):
+        self.dataval = dataval
+        self.nextval = None
+
+class LinkedList:
+    def __init__(self):
+        self.headval = None
+
+    def printLL(self):
+        printval = self.headval
+        while printval is not None:
+            print(printval.dataval)
+            printval = printval.nextval
+
+# Defining an instance of class LinkedList.
+list1 = LinkedList()
+
+# Defining its head node and getting it a value.
+list1.headval = Node(1)
+
+# Let us add some more nodes.
+list1.headval.nextval = Node(2)
+
+# Calling the print function.
+list1.printLL()
